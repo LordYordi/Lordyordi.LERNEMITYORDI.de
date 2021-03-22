@@ -1,1 +1,0 @@
-# Lordyordi.LERNEMITYORDI.de
