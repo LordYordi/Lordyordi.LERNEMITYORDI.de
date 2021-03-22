@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<title> Berechnung von 2 wiederständen </title>
+<style type="text/css">
+<!-- /* Kommentarzeichen und type="text/css" sind verzichtbar*/
+ body {
+ text-align: center;
+ font-family: Luminari;
+ font-size: 20px;
+ background-image: url(Widerstand.JFIF);
+ }
+-->
+</style>
+<script type="text/javascript">
+<!--
+function Berechnen() /* Hier wird die Reihenschaltung berechnet */
+{
+  var WiderstandR1 = document.Widerstandrech.Eingabe.value; 
+  var WiderstandR2 = document.Widerstandrech.widerständen.value;
+  
+  var Ergebniss1 = parseFloat(WiderstandR1) + parseFloat(WiderstandR2);
+  document.Widerstandrech.Ausgabe.value = Ergebniss1;
+}
+
+function Berech() /* Hier wird die Parallelschaltung berechnet */
+{
+  var WiderstandR1 = document.Widerstandrech.Eingabe.value; 
+  var WiderstandR2 = document.Widerstandrech.widerständen.value;
+  
+  var Ergebniss1 = (WiderstandR1*WiderstandR2)/(parseFloat(WiderstandR1)+parseFloat(WiderstandR2));
+  document.Widerstandrech.Ausgabe.value = Ergebniss1;
+}
+
+function blabla() /* Hier wird die StromStärkeR berechnet */
+{
+  var WiderstandR1 = document.Widerstandrech.Eingabe.value; 
+  var WiderstandR2 = document.Widerstandrech.widerständen.value;
+  var Spannung = document.Widerstandrech.Spannungen.value;
+  
+  var Ergebniss1 = Spannung/(parseFloat(WiderstandR1) + parseFloat(WiderstandR2));
+  document.Widerstandrech.Ausgabe.value = Ergebniss1;
+}
+
+function bla() /* Hier wird die StromStärkeP berechnet */
+{
+  var WiderstandR1 = document.Widerstandrech.Eingabe.value; 
+  var WiderstandR2 = document.Widerstandrech.widerständen.value;
+  var Spannung = document.Widerstandrech.Spannungen.value;
+  
+  var Ergebniss1 = Spannung/((WiderstandR1*WiderstandR2)/(parseFloat(WiderstandR1)+parseFloat(WiderstandR2)));
+  document.Widerstandrech.Ausgabe.value = Ergebniss1;
+}
+
+function hi() /* Hier wird die SpannungR berechnet */
+{
+  var WiderstandR1 = document.Widerstandrech.Eingabe.value; 
+  var WiderstandR2 = document.Widerstandrech.widerständen.value;
+  var Ampere = document.Widerstandrech.AmperN.value;
+  
+  var Ergebniss1 = Ampere*(parseFloat(WiderstandR1) + parseFloat(WiderstandR2));
+  document.Widerstandrech.Ausgabe.value = Ergebniss1;
+}
+
+function hallo() /* Hier wird die SpannungP berechnet */
+{
+  var WiderstandR1 = document.Widerstandrech.Eingabe.value; 
+  var WiderstandR2 = document.Widerstandrech.widerständen.value;
+  var Ampere = document.Widerstandrech.AmperN.value;
+  
+  var Ergebniss1 = Ampere*((WiderstandR1*WiderstandR2)/(parseFloat(WiderstandR1)+parseFloat(WiderstandR2)));
+  document.Widerstandrech.Ausgabe.value = Ergebniss1;
+}
+-->
+</script>
+</head>
+
+<body>
+<h2> Berechnen Sie den gesamtwiderstand, die stromstärke und die spannung</br>
+</h2>
+
+<form name="Widerstandrech">
+
+<h3> Erster Widerstand </h3>
+  <input type="text" name="Eingabe" placeholder="Widerstand in Ohm" style="border-width:3px;background-color:PaleGreen;">  
+  
+<h3> Zweiter Widerstand </h3>
+  <input type="text" name="widerständen" placeholder="Widerstand in Ohm" style="border-width:3px;background-color:PaleGreen;">
+  
+<h3> Spannung </h3>
+  <input type="text" name="Spannungen"placeholder="Spannung in Volt" style="border-width:3px;background-color:PaleGreen;">
+  
+<h3> Strom </h3>
+  <input type="text" name="AmperN"placeholder="Strom in Ampere" style="border-width:3px;background-color:PaleGreen;">
+<br/>
+  <input type="button" value="Reihenschaltung" onclick="Berechnen()" style="border-width:2px;background-color:PaleTurquoise;"> <input type="button" value="Parallelschaltung" onclick="Berech()" style="border-width:2px;background-color:PaleTurquoise;"></br> 
+  <input type="button" value="StromStärkeR" onclick="blabla()" style="border-width:2px;background-color:PaleTurquoise;"> <input type="button" value="StromStärkeP" onclick="bla()" style="border-width:2px;background-color:PaleTurquoise;"> </br>
+  <input type="button" value="SpannungR" onclick="hi()" style="border-width:2px;background-color:PaleTurquoise;"> <input type="button" value="SpannungP" onclick="hallo()" style="border-width:2px;background-color:PaleTurquoise;"> 
+
+
+<h3> Ergebniss </h3>
+  <input type="text" name="Ausgabe" style="border-width:3px;background-color:PaleGreen;">
+  
+<br/>
+	<input type="reset" name="clear" value="&#10005;" style="border-width:2px;background-color:PaleTurquoise;">
+
+</form>
+</body>
+</html>
